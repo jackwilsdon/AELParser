@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+
+version = '0.1.0'
+
+task execute(type: JavaExec) {
+    main = 'me.jackwilsdon.aelparser.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+repositories {
+    mavenCentral()
+}
+
+checkstyle {
+    configFile = new File(projectDir, "checkstyle.xml")
+}
